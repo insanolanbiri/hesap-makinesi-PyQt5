@@ -11,6 +11,8 @@ Hesap Makinesi by Eren
 mükemmel bir hesap makinesi.
 ----------------------------
 
+![ekran görüntüsü](https://user-images.githubusercontent.com/75967441/149652980-ed5a0bf2-c85b-4d15-99e0-71eb4a429ca4.png "Hesap Makinesi by Eren")
+
 bazılarının inanmak istemeyeceğini bilsem de bunu ben yaptım;
 internetten vs. çalmadan.
 
