@@ -23,6 +23,11 @@
       <height>231</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+     </font>
+    </property>
     <layout class="QGridLayout" name="gridLayout">
      <property name="verticalSpacing">
       <number>6</number>
@@ -34,6 +39,11 @@
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
@@ -59,6 +69,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
 border-style: outset;
@@ -82,6 +97,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
@@ -107,6 +127,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
 border-style: outset;
@@ -130,6 +155,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
@@ -155,6 +185,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
 border-style: outset;
@@ -178,6 +213,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
@@ -203,6 +243,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
 border-style: outset;
@@ -226,6 +271,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
@@ -251,6 +301,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
 border-style: outset;
@@ -274,6 +329,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
@@ -299,6 +359,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
 border-style: outset;
@@ -322,6 +387,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
@@ -347,6 +417,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
 border-style: outset;
@@ -371,6 +446,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: lightgray;
 border-style: outset;
@@ -394,6 +474,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="autoFillBackground">
         <bool>false</bool>
@@ -422,6 +507,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
 border-style: outset;
@@ -445,6 +535,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
@@ -470,6 +565,11 @@ padding: 4px;
          <verstretch>0</verstretch>
         </sizepolicy>
        </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
 border-style: outset;
@@ -493,6 +593,11 @@ padding: 4px;
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="font">
+        <font>
+         <family>Segoe UI</family>
+        </font>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: gray;
@@ -521,6 +626,11 @@ padding: 4px;
       <height>51</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">border-style: outset;
 border-width: 2px;
@@ -540,6 +650,11 @@ padding: 4px;
       <width>31</width>
       <height>25</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: lightblue;
@@ -562,6 +677,11 @@ padding: 4px;
       <height>25</height>
      </rect>
     </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+     </font>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: lightblue;
 border-style: outset;
@@ -580,8 +700,14 @@ padding: 4px;
       <x>50</x>
       <y>90</y>
       <width>111</width>
-      <height>25</height>
+      <height>31</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
+      <pointsize>11</pointsize>
+     </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: lightblue;

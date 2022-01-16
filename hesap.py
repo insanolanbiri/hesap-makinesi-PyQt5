@@ -43,6 +43,7 @@ class App(QMainWindow):
 
         self.win=uic.loadUi(os.path.join(os.getcwd(),"hesap.ui"),self)
         self.setFixedSize(self.size())
+        self.setWindowIcon(QtGui.QIcon('hesap.ico'))
         self.win.show()
         self.win.cikti.setFocus()
         self.cikti.returnPressed.connect(self.f_esittir)
