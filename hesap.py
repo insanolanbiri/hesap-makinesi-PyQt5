@@ -2,7 +2,7 @@ from PyQt5 import QtCore, QtGui,uic
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-import sys,os
+import sys,os,csv
 
 """
 Hesap Makinesi by Eren
@@ -28,16 +28,6 @@ eğer pip3 ile indirmede sıkıntı yaşıyorsanız, [şunu](https://sourceforge
 
 eğer o da karışık gelirse benim windows için derlediğim [binaryleri](https://github.com/insanolanbiri/hesap-makinesi-PyQt5/releases/latest "binaryler") de kullanabilirsiniz.
 """
-
-def asalcarpan(sayi):
-    carpanlar=[]
-    for i in range(2,sayi//2+1):
-        if sayi%i==0:
-            carpanlar.append(i)
-            for j in asalcarpan(sayi//i): carpanlar.append(j)
-            break
-    if len(carpanlar)==0: carpanlar.append(sayi)
-    return carpanlar
 
 class App(QMainWindow):
     def __init__(self):
@@ -84,14 +74,16 @@ class App(QMainWindow):
     def f_ac(self): self.cikti.setText("")
     def f_geri(self): self.cikti.setText(self.cikti.text()[:-1])
 
-    def f_asal(self): 
+    def f_asal(self):
         try:
-            sayi=int(self.cikti.text())
-        except:
-            return self.cikti.setText("bana int vermelisin dostum")
-        asallist=asalcarpan(sayi)
-        sonuc="*".join(str(i) for i in asallist)
-        self.cikti.setText(sonuc)
+            no=int(self.cikti.text())
+            with open("./anonim-deneme2022_ocak.csv") as file:
+                reader=csv.reader(file)
+                for row in reader:
+                    if row[0]==self.cikti.text():
+                        self.cikti.setText(row[6])
+                        break 
+        except: self.cikti.setText("bir şey oldu") 
 
 
     def f_esittir(self):
