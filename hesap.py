@@ -29,6 +29,16 @@ eğer pip3 ile indirmede sıkıntı yaşıyorsanız, [şunu](https://sourceforge
 eğer o da karışık gelirse benim windows için derlediğim [binaryleri](https://github.com/insanolanbiri/hesap-makinesi-PyQt5/releases/latest "binaryler") de kullanabilirsiniz.
 """
 
+def asalcarpan(sayi):
+    carpanlar=[]
+    for i in range(2,sayi//2+1):
+        if sayi%i==0:
+            carpanlar.append(i)
+            for j in asalcarpan(sayi//i): carpanlar.append(j)
+            break
+    if len(carpanlar)==0: carpanlar.append(sayi)
+    return carpanlar
+
 class App(QMainWindow):
     def __init__(self):
         super(App,self).__init__()
@@ -69,6 +79,7 @@ class App(QMainWindow):
         self.win.btn_geri.clicked.connect(lambda: self.f_geri())
         self.win.btn_esittir.clicked.connect(lambda: self.f_esittir())
         self.win.btn_asal.clicked.connect(lambda: self.f_asal())
+        self.win.btn_deneme.clicked.connect(lambda: self.f_deneme())
 
     def f_ekle(self,ek): self.cikti.setText(f"{self.cikti.text()}{ek}")
     def f_ac(self): self.cikti.setText("")
@@ -76,14 +87,23 @@ class App(QMainWindow):
 
     def f_asal(self):
         try:
-            no=int(self.cikti.text())
-            with open("./anonim-deneme2022_ocak.csv") as file:
+            sayi=int(self.cikti.text())
+        except:
+            return self.cikti.setText("bana int vermelisin dostum")
+        asallist=asalcarpan(sayi)
+        sonuc="*".join(str(i) for i in asallist)
+        self.cikti.setText(sonuc)
+
+    def f_deneme(self):
+        try:
+            with open("./anonim_deneme2022_ocak.csv") as file:
                 reader=csv.reader(file)
-                for row in reader:
-                    if row[0]==self.cikti.text():
-                        self.cikti.setText(row[6])
+                for kisi in reader:
+                    if kisi[0]==self.cikti.text():
+                        self.cikti.setText(f"{kisi[0]}: @{kisi[1]},kdrc={kisi[3]},pn={kisi[6]},ds={kisi[8]},ys={kisi[9]},bs={kisi[10]},ns={kisi[11]}")
                         break 
         except: self.cikti.setText("bir şey oldu") 
+        
 
 
     def f_esittir(self):

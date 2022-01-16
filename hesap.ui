@@ -621,7 +621,7 @@ padding: 4px;
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
+      <y>10</y>
       <width>261</width>
       <height>51</height>
      </rect>
@@ -646,7 +646,7 @@ padding: 4px;
     <property name="geometry">
      <rect>
       <x>190</x>
-      <y>90</y>
+      <y>100</y>
       <width>31</width>
       <height>25</height>
      </rect>
@@ -671,8 +671,8 @@ padding: 4px;
    <widget class="QPushButton" name="btn_geri">
     <property name="geometry">
      <rect>
-      <x>228</x>
-      <y>90</y>
+      <x>230</x>
+      <y>100</y>
       <width>31</width>
       <height>25</height>
      </rect>
@@ -707,6 +707,32 @@ padding: 4px;
      <font>
       <family>Segoe UI</family>
       <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: lightblue;
+border-style: outset;
+border-width: 2px;
+border-color: black;
+padding: 4px;
+</string>
+    </property>
+    <property name="text">
+     <string>Asal Çarpanlar</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_deneme">
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>70</y>
+      <width>71</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Segoe UI</family>
      </font>
     </property>
     <property name="styleSheet">
