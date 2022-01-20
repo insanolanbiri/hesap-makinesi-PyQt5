@@ -51,7 +51,7 @@ class App(QMainWindow):
         self.cikti.returnPressed.connect(self.f_esittir)
 
         # okura not: lambda'nın ne olduğu ile ilgili en ufak bir fikrim yok, ilk defa duyuyorum
-        # sadece stack overflow'da bu sorunu öyle çözmüşler, ben de uygulayayım dedim:
+        # sadece stack overflow'da şu sorunu öyle çözmüşler, ben de uygulayayım dedim:
         # https://stackoverflow.com/questions/40982518/argument-1-has-unexpected-type-nonetype
 
         self.win.btn1.clicked.connect(lambda: self.f_ekle("1"))
