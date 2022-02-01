@@ -2,32 +2,20 @@ from PyQt5 import QtCore, QtGui,uic
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
-import sys,os,csv
+import sys,os
+from denemefetch import *
 
 """
-Hesap Makinesi by Eren
+Hesap Makinesi by Eren: Deneme Edition
 ======================
 
 mükemmel bir hesap makinesi.
 ----------------------------
 
-![ekran görüntüsü ubuntu](https://user-images.githubusercontent.com/75967441/149655076-a4c6302b-ba6c-4365-a6a1-764fda2d2a35.png "Hesap Makinesi by Eren (Ubuntu/GNOME3)") ![ekran görüntüsü windows](https://user-images.githubusercontent.com/75967441/149655847-7183f87a-fbed-4bc4-8833-9054cf3c838a.png "Hesap Makinesi by Eren (Windows)")
-
-bazılarının inanmak istemeyeceğini bilsem de bunu ben yaptım;
-internetten vs. çalmadan.
-
-yalan söylediğimi iddia edecek olursanız, beni çıldırtmayın,
-iddialıysanız internetten aynısını bulmayı deneyebilirsiniz.
-
-önemli not
-----------
-şimdi bana kesin gelip bu çalışmıyor diyeceksiniz;
-bi zahmet PyQt5'i kurun, beni delirtmeyin: ```pip install PyQt5```
-
-eğer pip3 ile indirmede sıkıntı yaşıyorsanız, [şunu](https://sourceforge.net/projects/pyqt/files/PyQt5/ "PyQt5'in sourceforge reposu") da deneyebilirsiniz (ben denemedim)
-
-eğer o da karışık gelirse benim windows için derlediğim [binaryleri](https://github.com/insanolanbiri/hesap-makinesi-PyQt5/releases/latest "binaryler") de kullanabilirsiniz.
+selenium'u kurmayı unutmayın: ```pip install selenium```
 """
+
+class ProblemliKullaniciError(Exception): pass
 
 def asalcarpan(sayi):
     carpanlar=[]
@@ -96,16 +84,14 @@ class App(QMainWindow):
 
     def f_deneme(self):
         try:
-            with open("./anonim_deneme2022_ocak.csv") as file:
-                reader=csv.reader(file)
-                for kisi in reader:
-                    if kisi[0]==self.cikti.text():
-                        self.cikti.setText(f"{kisi[0]}: @{kisi[1]},kdrc={kisi[3]},pn={kisi[6]},ds={kisi[8]},ys={kisi[9]},bs={kisi[10]},ns={kisi[11]}")
-                        break 
+            no=int(self.cikti.text())
+            if find_ad_from_no(no)==-1: raise ProblemliKullaniciError
+            out=getSonuc(find_ad_from_no(no),no,url,puanbosluk)
+            self.cikti.setText(str(out))
+        except ValueError: self.cikti.setText("bana int vermelisin dostum")
+        except ProblemliKullaniciError: self.cikti.setText(f"{self.cikti.text()}: bana doğru düzgün numara ver")
         except: self.cikti.setText("bir şey oldu") 
         
-
-
     def f_esittir(self):
         try: self.cikti.setText(str(eval(self.cikti.text())))
         except: self.cikti.setText(f"{self.cikti.text()}: doğru düzgün gir")
