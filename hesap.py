@@ -39,7 +39,7 @@ def asalcarpan(sayi):
             for j in asalcarpan(sayi//i): carpanlar.append(j)
             break
     if len(carpanlar)==0: carpanlar.append(sayi)
-    rturn carpanlar
+    return carpanlar
 
 class App(QMainWindow):
     def __init__(self):
