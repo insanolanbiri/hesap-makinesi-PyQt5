@@ -5,11 +5,11 @@ from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from denemeconfig import *
-i=1
-ignored=[]
+
 opts=Options()
-opts.headless=True
-driver = webdriver.Firefox(options=opts)
+opts.headless=headless
+if drv_path: driver = webdriver.Firefox(options=opts,executable_path=drv_path)
+else: driver = webdriver.Firefox(options=opts)
 
 def getSonuc(ad,numara,url,puanbosluk):
     driver.get(url)
