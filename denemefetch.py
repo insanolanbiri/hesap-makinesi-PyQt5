@@ -11,7 +11,10 @@ opts.headless=headless
 if drv_path: driver = webdriver.Firefox(options=opts,executable_path=drv_path)
 else: driver = webdriver.Firefox(options=opts)
 
-def getSonuc(ad,numara,url,puanbosluk):
+class DenemeyeGirmemisException(Exception): pass
+
+def getSonuc(ad,numara,deneme_adi=deneme_adi,url=url,puanbosluk=puanbosluk):
+    global driver, i_sehir, i_kurum
     driver.get(url)
 
     seviye = Select(driver.find_element("id","seviye"))
@@ -34,8 +37,11 @@ def getSonuc(ad,numara,url,puanbosluk):
 
     driver.find_element("name","bulbtn1").submit()
 
-    WebDriverWait(driver, 3).until(EC.presence_of_element_located(("xpath","/html/body/div[1]/section/div/div/div[5]/div/div[1]/div/div")))
-
+    WebDriverWait(driver, 5).until(EC.presence_of_element_located(("xpath","/html/body/div[1]/section/div/div/div[1]")))
+    deneme_select=Select(driver.find_element("id","digersinavlarcombo"))
+    deneme_type=deneme_select.first_selected_option.text
+    if deneme_type!=deneme_adi:
+        raise DenemeyeGirmemisException
     sinif=driver.find_element("xpath","/html/body/div[1]/section/div/div/div[1]/div[2]/div[3]").text[1:]
     puan=float(driver.find_element("xpath","/html/body/div[1]/section/div/div/div[5]/div/div[1]/div/div").text[puanbosluk:].replace(",","."))
     
@@ -67,7 +73,10 @@ def getSonuc(ad,numara,url,puanbosluk):
     kim_s,kim_d,kim_y,kim_b,kim_n=getDers(8)
     biy_s,biy_d,biy_y,biy_b,biy_n=getDers(9)
     
-    return {"ad":ad,"no":numara,"9x":sinif,"s_drc":sinifdrc,"k_drc":kurumdrc,"i_drc":ildrc,"g_drc":geneldrc,"pn":puan,"ss":sorusayi,"ds":dogrusayi,"ys":yanlissayi,"bs":bossayi,"ns":netsayi,
+    return {"ad":ad,"no":numara,"9x":sinif,
+    "s_drc":sinifdrc,"k_drc":kurumdrc,"i_drc":ildrc,"g_drc":geneldrc,
+    "pn":puan,"ss":sorusayi,"ds":dogrusayi,"ys":yanlissayi,"bs":bossayi,"ns":netsayi,
+    
     "edb_s":edb_s,"edb_d":edb_d,"edb_y":edb_y,"edb_b":edb_b,"edb_n":edb_n,
     "trh_s":trh_s,"trh_d":trh_d,"trh_y":trh_y,"trh_b":trh_b,"trh_n":trh_n,
     "cog_s":cog_s,"cog_d":cog_d,"cog_y":cog_y,"cog_b":cog_b,"cog_n":cog_n,

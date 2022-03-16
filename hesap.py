@@ -89,6 +89,7 @@ class App(QMainWindow):
             out=getSonuc(find_ad_from_no(no),no,url,puanbosluk)
             self.cikti.setText(str(out))
         except ValueError: self.cikti.setText("bana int vermelisin dostum")
+        except DenemeyeGirmemisException: self.cikti.setText(f"{find_ad_from_no(no)} denemeye girmemiş")
         except ProblemliKullaniciError: self.cikti.setText(f"{self.cikti.text()}: bana doğru düzgün numara ver")
         except: self.cikti.setText("bir şey oldu") 
         
