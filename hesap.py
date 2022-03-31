@@ -3,8 +3,7 @@ from PyQt5.QtGui import *
 from PyQt5.QtCore import *
 from PyQt5.QtWidgets import *
 import sys,os
-from denemefetch import *
-
+from denemesonuc import *
 """
 Hesap Makinesi by Eren: Deneme Edition
 ======================
@@ -85,11 +84,11 @@ class App(QMainWindow):
     def f_deneme(self):
         try:
             no=int(self.cikti.text())
-            if find_ad_from_no(no)==-1: raise ProblemliKullaniciError
-            out=getSonuc(find_ad_from_no(no),no,url,puanbosluk)
+            if getAd(no)==-1: raise ProblemliKullaniciError
+            out=getSonuc(getAd(no),no)
             self.cikti.setText(str(out))
         except ValueError: self.cikti.setText("bana int vermelisin dostum")
-        except DenemeyeGirmemisException: self.cikti.setText(f"{find_ad_from_no(no)} denemeye girmemiş")
+        except DenemeyeGirmemisException: self.cikti.setText(f"{getAd(no)} denemeye girmemiş")
         except ProblemliKullaniciError: self.cikti.setText(f"{self.cikti.text()}: bana doğru düzgün numara ver")
         except: self.cikti.setText("bir şey oldu") 
         
